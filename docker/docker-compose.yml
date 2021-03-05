@@ -1,0 +1,19 @@
+version: '3'
+services:
+
+  database:
+    image: "postgres"
+    env_file:
+      - database.env # configure postgres
+    volumes:
+      - database-data:/var/lib/postgresql/data/
+    ports:
+      - "5432:5432"
+
+networks:
+  spring-cloud-network:
+    driver: bridge
+  client-server-network:
+    driver: bridge
+volumes:
+  database-data:
