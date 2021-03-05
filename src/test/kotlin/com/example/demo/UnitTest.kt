@@ -24,6 +24,6 @@ class UnitTest {
         `when`(customerService.getCustomers())
             .thenReturn(mutableListOf(Customer(1, name, "Hellofresh")))
         val result: MutableIterable<Customer> = customerController.getCustomer()
-        result.forEach { assertThat("Customer name is not as expected", it.name, equalTo("name")) }
+        result.forEach { assertThat("Customer name is not as expected", it.name, equalTo(name)) }
     }
 }
